@@ -20,13 +20,16 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restaurar dependências
-        run: dotnet restore
+        run: dotnet restore MarketplaceActionsDemo.Tests/MarketplaceActionsDemo.Tests.csproj
 
       - name: Compilar aplicação
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build MarketplaceActionsDemo.csproj --configuration Release --no-restore
+
+      - name: Compilar projeto de testes
+        run: dotnet build MarketplaceActionsDemo.Tests/MarketplaceActionsDemo.Tests.csproj --configuration Release --no-restore
 
       - name: Executar testes
-        run: dotnet test --configuration Release --no-build
+        run: dotnet test MarketplaceActionsDemo.Tests/MarketplaceActionsDemo.Tests.csproj --configuration Release --no-build
 
       - name: 3 - Construir imagem Docker
         uses: docker/build-push-action@v6
