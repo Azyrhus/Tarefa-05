@@ -19,7 +19,10 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restaurar dependências
+      - name: Restaurar dependências da aplicação
+        run: dotnet restore MarketplaceActionsDemo.csproj
+
+      - name: Restaurar dependências dos testes
         run: dotnet restore MarketplaceActionsDemo.Tests/MarketplaceActionsDemo.Tests.csproj
 
       - name: Compilar aplicação
