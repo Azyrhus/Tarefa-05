@@ -1,49 +1,21 @@
-# Gerador de Frases
+# Ritual de foco
 
-Projeto simples desenvolvido para demonstrar o funcionamento de uma pipeline CI/CD utilizando GitHub Actions.
+Uma experiencia de inspiracao curta para escolher uma intencao, encontrar uma ideia e guardar o que fizer sentido.
 
-## Sobre o projeto
+A aplicacao apresenta ideias por intencao, permite buscar no repertorio, favoritar frases, copiar o texto e alternar entre os temas claro e noturno.
 
-A aplicação apresenta frases aleatórias ao usuário.
+## Pipelines
 
-O projeto utiliza:
+O projeto usa tres workflows independentes no GitHub Actions:
 
-- HTML
-- CSS
-- JavaScript
-- Node.js
-- Jest
-- ESLint
-- GitHub Actions
+1. `ci.yml`: instala dependencias, executa lint e testes em Node.js 20 e 22.
+2. `quality.yml`: verifica auditoria de dependencias e valida os arquivos publicados.
+3. `deploy.yml`: prepara e publica o site estatico no GitHub Pages apos o push na branch `main`.
 
-## Pipeline
-
-A pipeline possui as seguintes etapas:
-
-1. Build
-2. Lint
-3. Test
-4. Security
-5. Deploy Dev
-6. Smoke Test
-7. Deploy Homologação
-8. Deploy Produção
-
-## Fluxo
+## Execucao local
 
 ```text
-Build
-  ↓
-Lint
-  ↓
-Test
-  ↓
-Security
-  ↓
-Deploy Dev
-  ↓
-Smoke Test
-  ↓
-Homologação
-  ↓
-Produção
+npm ci
+npm test
+npm run lint
+```

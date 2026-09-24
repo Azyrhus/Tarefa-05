@@ -2,12 +2,12 @@ const { obterFraseAleatoria } = require("../script");
 
 describe("Gerador de frases", () => {
 
-    test("deve retornar uma frase da lista", () => {
+    test("deve retornar um item da lista", () => {
 
         const frases = [
-            "Frase 1",
-            "Frase 2",
-            "Frase 3"
+            { texto: "Frase 1", tipo: "Começar" },
+            { texto: "Frase 2", tipo: "Criar" },
+            { texto: "Frase 3", tipo: "Continuar" }
         ];
 
         const resultado = obterFraseAleatoria(frases);
@@ -15,11 +15,18 @@ describe("Gerador de frases", () => {
         expect(frases).toContain(resultado);
     });
 
-    test("deve informar quando não existem frases", () => {
+    test("deve retornar nulo quando não existem frases", () => {
 
         const resultado = obterFraseAleatoria([]);
 
-        expect(resultado).toBe("Nenhuma frase disponível.");
+        expect(resultado).toBeNull();
+    });
+
+    test("deve manter as intenções do novo repertório", () => {
+        const { frases: repertorio } = require("../script");
+        const tipos = [...new Set(repertorio.map((frase) => frase.tipo))];
+
+        expect(tipos).toEqual(expect.arrayContaining(["Começar", "Continuar", "Criar"]));
     });
 
 });
