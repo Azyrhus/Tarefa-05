@@ -1,0 +1,54 @@
+:root {
+    --ink: #17221b;
+    --muted: #68756d;
+    --paper: #f3f0e8;
+    --card: #fffdf8;
+    --line: #d8ded4;
+    --accent: #db5b3f;
+    --accent-dark: #a83e2b;
+    --sage: #c9d8c3;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Georgia, "Times New Roman", serif; }
+.app-shell { width: min(1080px, calc(100% - 48px)); margin: 0 auto; padding: 32px 0 64px; }
+.topbar, .hero, .section-heading, .card-actions, .quote-meta { display: flex; align-items: center; justify-content: space-between; }
+.kicker, .eyebrow { margin: 0; color: var(--accent-dark); font: 700 11px Arial, sans-serif; letter-spacing: 1.5px; text-transform: uppercase; }
+.icon-button, .secondary, .filter, .primary { border: 0; cursor: pointer; font-family: Arial, sans-serif; }
+.icon-button { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); background: transparent; font-size: 18px; }
+.hero { gap: 32px; padding: 88px 0 56px; border-bottom: 1px solid var(--line); }
+h1 { max-width: 620px; margin: 10px 0 16px; font-size: clamp(52px, 9vw, 108px); font-weight: 400; letter-spacing: -4px; line-height: .9; }
+h1 span { color: var(--accent); }
+.intro { max-width: 430px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.5; }
+.streak { min-width: 130px; padding: 20px 0 20px 28px; border-left: 1px solid var(--line); }
+.streak strong { display: block; color: var(--accent); font-size: 42px; font-weight: 400; }
+.streak span, #total-favoritos { color: var(--muted); font: 12px Arial, sans-serif; }
+.workspace { display: grid; grid-template-columns: minmax(190px, .7fr) 1.3fr; gap: 32px; padding: 48px 0 72px; }
+.controls label { display: block; margin-bottom: 10px; font: 700 12px Arial, sans-serif; }
+input { width: 100%; padding: 13px 0; border: 0; border-bottom: 1px solid var(--line); outline: 0; color: var(--ink); background: transparent; font: 16px Georgia, serif; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.filter { padding: 9px 12px; border: 1px solid var(--line); border-radius: 20px; color: var(--muted); background: transparent; font-size: 12px; }
+.filter.active, .filter:hover { border-color: var(--ink); color: var(--paper); background: var(--ink); }
+.quote-card { min-height: 310px; padding: 32px; border-radius: 4px; background: var(--card); box-shadow: 14px 14px 0 var(--sage); }
+.quote-meta { color: var(--accent-dark); font: 700 11px Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+blockquote { max-width: 680px; min-height: 130px; margin: 32px 0 24px; font-size: clamp(26px, 4vw, 43px); line-height: 1.08; }
+.primary { padding: 13px 18px; border-radius: 2px; color: #fffdf8; background: var(--accent); font-size: 13px; font-weight: 700; }
+.primary span { margin-left: 18px; font-size: 18px; }
+.secondary { width: 42px; height: 42px; margin-left: 8px; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); background: transparent; font-size: 18px; }
+.saved-section { padding-top: 34px; border-top: 1px solid var(--line); }
+h2 { margin: 8px 0 0; font-size: 30px; font-weight: 400; }
+.saved-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+.empty-state { grid-column: 1 / -1; color: var(--muted); font-size: 15px; }
+.saved-item { padding: 18px; border: 1px solid var(--line); background: rgb(255 253 248 / 60%); }
+.saved-item p { margin: 0 0 14px; line-height: 1.35; }
+.saved-item small { color: var(--accent-dark); font: 10px Arial, sans-serif; text-transform: uppercase; }
+body.night { --ink: #e8ede4; --muted: #a8b4a7; --paper: #18201b; --card: #222d25; --line: #3b4a3d; --sage: #344b3b; }
+@media (max-width: 680px) {
+    .app-shell { width: min(100% - 32px, 540px); padding-top: 20px; }
+    .hero { align-items: flex-start; flex-direction: column; padding: 64px 0 40px; }
+    .streak { width: 100%; padding: 18px 0 0; border-top: 1px solid var(--line); border-left: 0; }
+    .workspace { display: block; padding: 34px 0 58px; }
+    .filters { margin-bottom: 34px; }
+    .quote-card { padding: 24px; box-shadow: 8px 8px 0 var(--sage); }
+    .saved-list { grid-template-columns: 1fr; }
+}

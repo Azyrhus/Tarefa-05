@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ritual de foco</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <p class="kicker">Caderno de presença</p>
+            <button id="tema" class="icon-button" type="button" aria-label="Alternar tema">◐</button>
+        </header>
+
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Seu próximo passo começa aqui</p>
+                <h1>Ritual de <span>foco.</span></h1>
+                <p class="intro">Uma pausa curta para encontrar a ideia certa antes de voltar ao que importa.</p>
+            </div>
+            <div class="streak" aria-label="Sessões de foco">
+                <strong id="contador">0</strong>
+                <span>sessões hoje</span>
+            </div>
+        </section>
+
+        <section class="workspace" aria-label="Gerador de foco">
+            <div class="controls">
+                <label for="busca">Buscar inspiração</label>
+                <input id="busca" type="search" placeholder="Ex.: coragem, aprender...">
+                <div class="filters" role="group" aria-label="Filtrar por intenção">
+                    <button class="filter active" type="button" data-filtro="Todas">Todas</button>
+                    <button class="filter" type="button" data-filtro="Começar">Começar</button>
+                    <button class="filter" type="button" data-filtro="Continuar">Continuar</button>
+                    <button class="filter" type="button" data-filtro="Criar">Criar</button>
+                </div>
+            </div>
+
+            <article class="quote-card">
+                <div class="quote-meta"><span id="tipo">Pronto para começar</span><span id="numero">01</span></div>
+                <blockquote id="frase">Escolha uma intenção e deixe uma ideia abrir espaço.</blockquote>
+                <div class="card-actions">
+                    <button id="botao" class="primary" type="button">Encontrar uma ideia <span>→</span></button>
+                    <button id="favoritar" class="secondary" type="button" aria-label="Favoritar ideia">♡</button>
+                    <button id="copiar" class="secondary" type="button" aria-label="Copiar ideia">▣</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="saved-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Coleção pessoal</p>
+                    <h2>Ideias guardadas</h2>
+                </div>
+                <span id="total-favoritos">0 guardadas</span>
+            </div>
+            <div id="favoritos" class="saved-list">
+                <p class="empty-state">Suas ideias favoritas aparecem aqui.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
